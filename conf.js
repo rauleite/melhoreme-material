@@ -1,4 +1,9 @@
 exports.config = {
+
+    onPrepare: function() {
+        browser.driver.get(browser.baseUrl);
+    },
+
     allScriptsTimeout: 500000,
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: [

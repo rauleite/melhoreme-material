@@ -10,6 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    //frameworks: ['ng-scenario', 'jasmine'],
     frameworks: ['jasmine'],
 
 
@@ -18,7 +19,8 @@ module.exports = function(config) {
       'public/assets/libs/angular/angular.js',
       'public/assets/libs/angular-mocks/angular-mocks.js',
       'public/assets/js/controllers/*.js',
-      'test/unit/**/*.js'
+      'test/unit/**/*.js',
+      'test/e2e/**/*.js'
     ],
 
 

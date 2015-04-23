@@ -1,3 +1,5 @@
+'use strict';
+
 describe("sorting the list of users", function() {
     // individual tests go here
     it('sorts in descending order by default', function() {
@@ -6,8 +8,6 @@ describe("sorting the list of users", function() {
         expect(users).toEqual(['jack', 'igor', 'jeff']);
     });
 });
-
-
 
 describe('GeekController', function() {
     beforeEach(module('GeekCtrl'));

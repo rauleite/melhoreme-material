@@ -1,4 +1,4 @@
-var Usuario = require('./models/Usuario');
+var User = require('./models/User');
 
 module.exports = function(app) {
 
@@ -8,7 +8,7 @@ module.exports = function(app) {
 
 	/* GET /usuario listing. */
 	app.get('/usuario', function(req, res, next) {
-		Usuario.find(function (err, usuarios) {
+		User.find(function (err, usuarios) {
 			if (err) return next(err);
 			res.json(usuarios);
 		});

@@ -1,2 +1,14 @@
 nodemon server.js
 browser-sync start --proxy "localhost:8080" --files "public/assets/css/*.css, public/index.html"
+
+== TESTS ==
+
+---- KARMA-JASMINE (Unit) ----
+karma start [karma.conf.js]
+
+---- PROTRACTOR (Karma) ----
+npm install -g protractor
+webdriver-manager update
+
+webdriver-manager start
+protractor conf.js
