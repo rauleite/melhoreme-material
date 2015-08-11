@@ -3,22 +3,25 @@ angular.module('appRoutes', [])
 
 	$routeProvider
 
-		// home page
+        //.when('/', {
+        //    redirectTo: '../../index.ejs',
+        //    //controller: 'HomeController'
+        //})
 		.when('/', {
-			templateUrl: 'views/home.html',
-			controller: 'MainController'
+            templateUrl: '../../views/partials/home.ejs',
+			controller: 'HomeController'
 		})
+        .when('/register', {
+			templateUrl: '../../views/partials/register.ejs',
+            controller: 'RegisterController'
+        })
 
-		.when('/nerds', {
-			templateUrl: 'views/nerd.html',
-			controller: 'NerdController'
-		})
-
-		.when('/geeks', {
-			templateUrl: 'views/geek.html',
-			controller: 'GeekController'	
+		.when('/example', {
+			templateUrl: '../../views/example.ejs',
+			controller: 'ExampleController'
 		});
 
 	$locationProvider.html5Mode(true);
+    });
 
-});
+console.log("foi");

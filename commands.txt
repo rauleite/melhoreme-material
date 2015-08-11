@@ -1,14 +1,81 @@
-nodemon server.js
-browser-sync start --proxy "localhost:8080" --files "public/assets/css/*.css, public/index.html"
-
 == TESTS ==
 
+--- CI ---
+sudo docker run -i ubuntu /bin/bash (download if not exists)
+sudo docker run -i -t ubuntu/jenkins /bin/bash (image commited)
+
+# NO DOCKER:
+
+cd /var/lib/jenkins/jobs/Melhore.me/workspace; nohup nodemon server.js &
+webdriver-manager update
+nohup webdriver-manager start &
+
+# NO CI SERVER:
+npm install;
+bower install;
+protractor conf.js;
+
+--- UTILs ---
+
+
+sudo netstat -tulpn | grep 4444 [ou 'tcp']
+
+browser-sync start --proxy "localhost:8080" --files "public/assets/css/*.css, public/index.html"
+
+
+--- DOCKER ---
+# COMMIT:
+sudo docker commit 25e24917b685 ubuntu/jenkins
+
+
 ---- KARMA-JASMINE (Unit) ----
+
 karma start [karma.conf.js]
 
+
 ---- PROTRACTOR (Karma) ----
+
 npm install -g protractor
 webdriver-manager update
 
 webdriver-manager start
 protractor conf.js
+
+
+# INSTALL JENKINS
+
+sudo apt-get install -y wget
+wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+# CONFIG JENKINS
+
+sudo vim /etc/default/jenkins: HTTP_PORT=8081
+
+service jenkins start
+OR
+[~/Develop/node/strider] NODE_ENV=production npm start
+
+
+# INSTALL PROTRACTOR:
+
+# Protractor (and web-manager)
+npm install -g protractor
+
+
+# INSTALL Node and NPM
+
+sudo apt-get install -y curl
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+sudo apt-get install -y nodejs
+sudo apt-get install build-essential
+
+
+# Python for NPM
+
+# TEM QUE SER PYTHON (2.7 NÃO python3)
+sudo apt-get install python
+

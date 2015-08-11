@@ -1,0 +1,30 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-lg')">
+    <md-toolbar>
+        <h2 class="md-toolbar-tools">
+            <span>Procurar Cursos</span>
+                <span ng-click="close()" class="close-side" hide-gt-lg>
+                    &nbsp; [fechar]
+                </span>
+            </span>
+        </h2>
+    </md-toolbar>
+
+    <md-content>
+        <div class="menu">
+            <md-list>
+                <md-item ng-repeat="item in menuLista">
+                    <md-item-content>
+
+                        <div class="md-tile-content menu-in" layout="row" layout-align="start center"
+                             ng-click="searchCurso($index); close()" ng-class="{'active' : toggleObject.item == $index}">
+                            <h4 >{{item.categoria}}</h4>
+                        </div>
+                    </md-item-content>
+                    <md-divider ng-if="!$last" hide-gt-sm></md-divider>
+                </md-item>
+            </md-list>
+        </div>
+    </md-content>
+
+</md-sidenav>

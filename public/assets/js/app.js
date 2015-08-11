@@ -1,19 +1,22 @@
 angular.module('mainApp', [
-    //LIBs
+    //LIBs =====================
     'ngRoute',
     'ngMaterial',
+    'ngMessages',
     'ngAnimate',
-    //'infinite-scroll',
+    // =========================
 
-    //APP MODULES
+    //APP MODULES ==============
     'appRoutes',
     'appDirectives',
+    // =========================
 
-    //CONTROLLERS E SERVICES
+    //CONTROLLERS E SERVICES ===
     'MainCtrl',
-    'NerdCtrl',
-    'SideLeftCtrl',
-    'NerdService',
-    'GeekCtrl',
-    'GeekService',
+    'HomeCtrl',
+    'RegisterCtrl',
+    'ExampleCtrl',
+    'ExampleService',
+    // ==========================
+
 ]);

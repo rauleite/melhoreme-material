@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt_BR" class="no-js">
+<head>
+    <% include views/partials/home-head.ejs %>
+</head>
+<body ng-app="mainApp" layout="column">
+
+	<div ng-controller="HomeController" layout="column" flex >
+		<!--<md-icon md-svg-icon="call:business"></md-icon>-->
+		<div ng-view></div>
+	</div>
+
+	<!-- SCRIPTS POST CHARGE -->
+<script type="text/javascript">
+
+	angular.module('mainApp')
+			.config(function($mdThemingProvider, $mdIconProvider){
+
+				$mdIconProvider
+					.icon("communication:email", './assets/svg/communication/ic_email_24px.svg', 24)
+					.icon("social:person", './assets/svg/social/ic_person_24px.svg', 24)
+					.icon("maps:local_phone", './assets/svg/maps/ic_local_phone_24px.svg', 24)
+					.icon("maps:place", './assets/svg/maps/ic_place_24px.svg', 24)
+					.iconSet("social", 'img/icons/sets/social-icons.svg', 24);
+
+
+
+				$mdThemingProvider.theme('default')
+						.primaryPalette('blue')
+						.accentPalette('red');
+			});
+
+</script>
+
+</body>
+</html>
